@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f6f9;
+    }
+
+    /* Header */
+    .topbar {
+      background: white;
+      padding: 10px 20px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .topbar img {
+      height: 50px;
+    }
+    .topbar .username {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    /* Nav bar */
+    .navbar {
+      background: #2c3e50;
+      color: white;
+      display: flex;
+      gap: 20px;
+      padding: 10px 20px;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Dashboard content */
+    .dashboard {
+      padding: 20px;
+    }
+    .dashboard h2 {
+      margin-bottom: 20px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    .card img {
+      width: 100px;
+      margin-bottom: 10px;
+    }
+
+    .card .semester-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #e74c3c;
+      color: white;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 3px;
+    }
+
+    .card-title {
+      font-weight: bold;
+      font-size: 16px;
+      color: #2c3e50;
+    }
+
+     .open-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0485cb;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .open-button:hover {
+            background-color: #2980b9;
+        }
+
+        
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <!-- Navigation -->
+  <div class="navbar">
+    <a href="#">Dashboard</a>
+    <label for="semesterSelect"><strong>Select Semester:</strong></label>
+  <select id="semesterSelect" onchange="filterSemester()">
+    <option value="1">Semester - 1</option>
+    <option value="2">Semester - 2</option>
+    <option value="3">Semester - 3</option>
+    <option value="4">Semester - 4</option>
+    <option value="5">Semester - 5</option>
+    <option value="6">Semester - 6</option>
+    <option value="7">Semester - 7</option>
+    <option value="8">Semester - 8</option>
+  </select>
+
+  </div>
+
+  <!-- Semester 1 -->
+  
+  <!-- Course Cards -->
+<div class="card-grid" id="cardGrid">
+        <div class="card" data-semester="1">
+            <span class="semester-badge">Semester - 1</span>
+            <img src="uni logo.png" alt="Course Icon">
+            <div class="card-title">SESH1110 - Calculus</div>
+            <a href="PRAC 8 AI(193).pdf" class="open-button" target="_blank">Open PDF</a>
+        </div>
+  
+     <div class="card" data-semester="1">
+      <span class="semester-badge">Semester - 1</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SECE1120 - Joy of Programming</div>
+       <a href="Joy of Programming (SECE1120).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+
+     <div class="card" data-semester="1">
+      <span class="semester-badge">Semester - 1</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SEIT1110 - Cyberspace Awareness</div>
+       <a href="Cyberspace Awareness (SEIT1110).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+
+     <div class="card" data-semester="1">
+      <span class="semester-badge">Semester - 1</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SESH1130 - Conceptual Experimental Physics</div>
+       <a href="Conceptual Experimental Physics (SESH1130).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+
+<!-- Semester 2 -->
+    <div class="card" data-semester="2">
+  <span class="semester-badge">Semester - 2</span>
+  <img src="uni logo.png" alt="Course Icon">
+  <div class="card-title">SECV1110 - Core Engineering Concepts</div>
+   <a href="Core Engineering Concept (SECV1110).pdf" class="open-button" target="_blank">Open PDF</a>
+</div>
+
+<div class="card" data-semester="2">
+  <span class="semester-badge">Semester - 2</span>
+  <img src="uni logo.png" alt="Course Icon">
+  <div class="card-title">SESH1120 - Linear Algebra</div>
+   <a href="Linear Algebra (SESH1120).pdf" class="open-button" target="_blank">Open PDF</a>
+</div>
+
+<div class="card" data-semester="2">
+  <span class="semester-badge">Semester - 2</span>
+  <img src="uni logo.png" alt="Course Icon">
+  <div class="card-title">SECH1110 - Fundamental Chemistry & Environmental Science</div>
+   <a href="Fundamental Chemistry and Environmental Science(SECH1110).pdf" class="open-button" target="_blank">Open PDF</a>
+</div>
+
+<div class="card" data-semester="2">
+  <span class="semester-badge">Semester - 2</span>
+  <img src="uni logo.png" alt="Course Icon">
+  <div class="card-title">SEIT1120 - Competitive Quantitative Aptitude</div>
+   <a href="Competitive Quantitative Aptitude (SEIT1120).pdf" class="open-button" target="_blank">Open PDF</a>
+</div>
+
+
+<!-- Semester 3 -->
+
+   <div class="card" data-semester="3">
+  <span class="semester-badge">Semester - 3</span>
+  <img src="uni logo.png" alt="Course Icon">
+  <div class="card-title">SESH2130 - Discrete Structures & Graph Theory</div>
+   <a href="PRAC 8 AI(193).pdf" class="open-button" target="_blank">Open PDF</a>
+</div>
+
+    <div class="card" data-semester="3">
+      <span class="semester-badge">Semester - 3</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SEIT2210 - Object Oriented Programming with Java</div>
+       <a href="PRAC 8 AI(193).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+
+   <div class="card" data-semester="3">
+            <span class="semester-badge">Semester - 3</span>
+            <img src="uni logo.png" alt="Course Icon">
+            <div class="card-title">SECE2221 - Data Structures</div>
+            <a href="data stucture.pdf.pdf" class="open-button" target="_blank">Open PDF</a>
+                    </div>
+
+    <div class="card" data-semester="3">
+      <span class="semester-badge">Semester - 3</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SECE2210 - Database Management System</div>
+       <a href="PRAC 8 AI(193).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+<!-- Semester 4 -->
+    
+    <div class="card" data-semester="4">
+      <span class="semester-badge">Semester - 4</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SESH2140 - Differential Equations & Statistics</div>
+       <a href="PRAC 8 AI(193).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+
+    <div class="card" data-semester="4">
+      <span class="semester-badge">Semester - 4</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SECE2231 - Computer Organization</div>
+       <a href="PRAC 8 AI(193).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+
+     <div class="card" data-semester="4">
+      <span class="semester-badge">Semester - 4</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SECE2240 - Computer Network</div>
+       <a href="PRAC 8 AI(193).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+
+     <div class="card" data-semester="4">
+      <span class="semester-badge">Semester - 4</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SECE2230 - Operating System</div>
+       <a href="PRAC 8 AI(193).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+
+    <!-- Semester 5 -->
+
+     <div class="card" data-semester="5">
+      <span class="semester-badge">Semester - 5</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SECE4221 - Artifical Intelligence</div>
+       <a href="PRAC 8 AI(193).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+
+    <div class="card" data-semester="5">
+      <span class="semester-badge">Semester - 5</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SEIT3270 - Web Technologies</div>
+       <a href="PRAC 8 AI(193).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+
+    <div class="card" data-semester="5">
+      <span class="semester-badge">Semester - 5</span>
+      <img src="uni logo.png" alt="Course Icon">
+      <div class="card-title">SEML3211 - Foundation of Machine Learning</div>
+       <a href="PRAC 8 AI(193).pdf" class="open-button" target="_blank">Open PDF</a>
+    </div>
+  </div>
+
+  <!-- Script to Filter -->
+  <script>
+    function filterSemester() {
+      const selected = document.getElementById("semesterSelect").value;
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+        const sem = card.getAttribute("data-semester");
+        if (selected === "all" || sem === selected) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    // Optional: default to Semester 1
+    window.onload = function() {
+      document.getElementById("semesterSelect").value = "1";
+      filterSemester();
+    }
+  </script>
+
+
+</body>
+</html>
